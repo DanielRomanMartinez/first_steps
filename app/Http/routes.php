@@ -23,3 +23,12 @@ Route::get('/notes', function () {
 
     return view('notes', compact('notes'));
 });
+
+Route::get('notes/create', function () {
+    // return '[Create notes]'; Ejemplo string
+    return ['notes' => 'create']; // Ejemplo Json
+});
+
+Route::get('note/{note}/{slug?}', function ($note, $slug = null) {
+    dd($note, $slug);
+})->where('note', '[0-9]+');
