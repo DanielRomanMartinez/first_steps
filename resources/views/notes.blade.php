@@ -12,6 +12,13 @@
                 <li>{{ $note ->note }}</li>
                 @endforeach
             </ul>
+            <form method="POST">
+                <!-- Metodo 1: <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+                <!-- Metodo 2: -->
+                {!! csrf_field() !!}
+                <textarea></textarea>
+                <button type="submit">Create a new Note</button>
+            </form>
         </div>
     </body>
 </html>

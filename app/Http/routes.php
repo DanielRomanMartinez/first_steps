@@ -17,12 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/notes', function () {
+Route::get('notes', function () {
     
 	$notes = Note::all();
 
     return view('notes', compact('notes'));
 });
+
+/* EJEMPLO POST */
+Route::Post('notes', function(){
+	return "Creating a note";
+});
+
 
 Route::get('notes/create', function () {
     // return '[Create notes]'; Ejemplo string
